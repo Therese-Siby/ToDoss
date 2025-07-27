@@ -57,7 +57,10 @@ function App() {
                 <p>{obj.text}</p>
               </div>
               <div className="right">
-                <i className="fas fa-times"></i>
+                <i onClick={()=>{
+                    const updatedList = todos.filter((t)=>t.id !== obj.id);
+                    setTodos(updatedList)
+                } } className="fas fa-times"></i>
               </div>
             </div>
           );
